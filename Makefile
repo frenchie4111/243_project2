@@ -1,5 +1,5 @@
 build: src/Water.java src/Puzzle.java src/Clock.java src/Solver.java
-	javac -d bin -sourcepath src/ src/Water.java
+	javac -d bin -sourcepath src/ src/Water.java src/Clock.java
 
 build-test-water: src/TestWater.java
 	javac -d bin -sourcepath src/ src/TestWater.java
