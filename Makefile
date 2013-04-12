@@ -23,3 +23,7 @@ push:
 	git add .
 	git commit
 	git push
+
+clean:
+	rm -rf *.class
+	rm -rf bin/*.class
