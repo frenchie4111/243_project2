@@ -11,3 +11,8 @@ test:
 
 try: 
 	try grd-243 project2-1 src/Clock.java src/Water.java src/Puzzle.java src/Solver.java src/design.txt
+
+push: 
+	git add .
+	git commit
+	git push
