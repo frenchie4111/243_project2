@@ -1,4 +1,5 @@
 build: src/Water.java src/Puzzle.java src/Clock.java src/Solver.java
+	make setup
 	javac -d bin -sourcepath src/ src/Water.java src/Clock.java
 
 build-test-water: src/TestWater.java
@@ -15,6 +16,9 @@ test:
 	java -cp bin/ TestWater
 	echo 'Testing clock'
 	java -cp bin/ TestClock
+
+setup:
+	mkdir -p bin/
 
 try: 
 	try grd-243 project2-1 src/Clock.java src/Water.java src/Puzzle.java src/Solver.java src/design.txt

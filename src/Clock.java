@@ -125,6 +125,26 @@ public class Clock implements Puzzle {
 	public String toString() {
 		return Integer.toString(config);
 	}
+
+	/**
+	 * Returns if it is equal to another object
+	 */
+	public boolean equals(Object o) {
+		if( o instanceof Clock ) {
+			Clock c = (Clock)o;
+			if((c.getGoal() == this.getGoal()) && c.getConfig().equals(this.getConfig())) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	/**
+	 *
+	 */
+	public int hashCode() {
+		return this.toString().hashCode();
+	}
 	
 	public static void main(String[] args) {
 		if(args.length == 3) {
