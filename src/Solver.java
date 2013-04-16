@@ -46,15 +46,24 @@ public class Solver {
 		boolean found = myPuzzle.isGoal();
 		
 		while( !queue.isEmpty() && !found) {
+			// Get next config up
 			current = queue.remove(0);
+
+			// Get neighbors of current config for iteration
 			ArrayList<Puzzle> neighbors = current.get( current.size() - 1 ).getNeighbors();
 			
+			// Iterate over neighbors
 			for(Puzzle newConfig : neighbors) {
 				if( !visited.contains(newConfig) ) {
+					// Add the current step to visited list to ensure no repeats
 					visited.add(newConfig);
+
+					// Create a new config list based on the current
+					//	and add the new neighbor to it
 					ArrayList<Puzzle> newCurrent = new ArrayList<Puzzle>(current);
 					newCurrent.add(newConfig);
 
+					// Check if it's the goal, and if not add it to the line
 					if( newConfig.isGoal() ) {
 						current = newCurrent;
 						found = true;
